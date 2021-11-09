@@ -17,5 +17,10 @@ module.exports = {
     '@typescript-eslint'
   ],
   rules: {
+  },
+  globals: {
+    wx: true,
+    uni: true,
+    WechatMiniprogram: true
   }
 }

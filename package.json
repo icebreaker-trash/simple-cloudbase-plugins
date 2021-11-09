@@ -4,6 +4,7 @@
   "description": "simple-cloudbase-plugins",
   "main": "index.js",
   "scripts": {
+    "build": "node scripts/build.js",
     "sym": "node scripts/sym.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,11 +22,13 @@
     "@types/node": "^16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.3.1",
     "@typescript-eslint/parser": "^5.3.1",
+    "esbuild": "^0.13.13",
     "eslint": "7.12.1",
     "eslint-config-standard": "^16.0.3",
     "eslint-plugin-import": "2.22.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-promise": "4.2.1",
+    "execa": "^5.1.1",
     "miniprogram-api-typings": "^3.4.4",
     "typescript": "^4.4.4"
   }
