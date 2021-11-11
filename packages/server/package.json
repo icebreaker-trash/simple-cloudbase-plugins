@@ -1,7 +1,7 @@
 {
   "name": "@simple-cloudbase/server",
   "version": "0.0.2",
-  "description": "",
+  "description": "@simple-cloudbase/server",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
   "publishConfig": {
