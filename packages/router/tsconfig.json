@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "declaration": false,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "lib": ["ESNext"],
+    "types": ["miniprogram-api-typings", "node", "debug", "koa", "koa-compose"],
+    "baseUrl": ".",
+    "paths": {
+      "#types/*": ["types/*"],
+      "#types": ["types/index.d.ts"]
+    }
+  },
+  "exclude": ["node_modules"],
+  "include": ["src", "types"]
+}

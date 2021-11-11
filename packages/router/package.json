@@ -1,0 +1,38 @@
+{
+  "name": "@simple-cloudbase/router",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "sonofmagic/simple-cloudbase-plugins",
+    "directory": "packages/router"
+  },
+  "keywords": [
+    "router",
+    "tcb-router",
+    "小程序",
+    "wechat",
+    "微信云开发"
+  ],
+  "author": "ice breaker",
+  "devDependencies": {
+    "@cloudbase/database": "^1.4.0",
+    "@types/debug": "^4.1.7",
+    "@types/koa": "^2.13.4",
+    "@types/koa-compose": "^3.2.5",
+    "@types/node": "^16.11.7",
+    "debug": "^4.3.2",
+    "koa-compose": "^4.1.0",
+    "miniprogram-api-typings": "^3.4.4",
+    "path-to-regexp": "^6.2.0",
+    "urllib": "^2.37.4"
+  }
+}
