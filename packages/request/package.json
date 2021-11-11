@@ -1,9 +1,9 @@
 {
   "name": "@simple-cloudbase/request",
   "version": "0.0.1",
-  "description": "",
+  "description": "@simple-cloudbase/request",
   "main": "dist/index.js",
-  "module": "dist/index.es.js",
+  "types": "types/index.d.ts",
   "files": [
     "dist"
   ],
@@ -18,7 +18,12 @@
     "url": "sonofmagic/simple-cloudbase-plugins",
     "directory": "packages/request"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "simple-cloudbase"
+  ],
+  "author": "ice breaker",
+  "license": "ISC",
+  "devDependencies": {
+    "miniprogram-api-typings": "^3.4.4"
+  }
 }

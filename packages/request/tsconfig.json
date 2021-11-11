@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "module": "ESNext",
+    "declaration": true,
+    "outDir": "dist",
+    "allowJs": true,
+    "declarationMap": true,
+    "target": "ESNext",
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "types": ["miniprogram-api-typings"],
+    "baseUrl": ".",
+    "paths": {
+      "#types/*": ["types/*"],
+      "#types": ["types/index.d.ts"]
+    }
+  },
+  "exclude": ["node_modules"]
+}

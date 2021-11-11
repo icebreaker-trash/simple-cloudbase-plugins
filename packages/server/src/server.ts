@@ -1,5 +1,5 @@
 import Koa from 'koa'
-import type { Middleware } from 'koa'
+import type { IRouterMiddleware } from '#types'
 import Router from '@koa/router'
 import fs, { promises as fsp } from 'fs'
 import koaBody from 'koa-body'
@@ -12,10 +12,6 @@ export function createRouter () {
   return new Router()
 }
 
-export interface IRouterMiddleware {
-  path: string
-  middleware: Middleware
-}
 export async function transformEventFunctions2Middleware (distDir: string) {
   const dirs = await fsp.readdir(distDir)
   const mids: IRouterMiddleware[] = []

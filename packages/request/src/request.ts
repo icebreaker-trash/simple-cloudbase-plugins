@@ -1,8 +1,4 @@
-export interface IRequestOption {
-  mode: 'serverless' | 'legacy'
-  httpMethod?: 'post'
-  baseUrl?: string
-}
+import type { IRequestOption, RequestMode } from '#types'
 
 function wxRequest (option: WechatMiniprogram.RequestOption) {
   const p: Promise<unknown> & { task?: WechatMiniprogram.RequestTask } =
@@ -23,8 +19,9 @@ function wxRequest (option: WechatMiniprogram.RequestOption) {
     })
   return p
 }
+
 export class Request {
-  public mode: 'serverless' | 'legacy'
+  public mode: RequestMode
   public httpMethod: 'post'
   public baseUrl: string
   constructor (option?: IRequestOption) {

@@ -11,7 +11,7 @@ const getDefaults = () => {
     platform: 'browser',
     sourcemap: true,
     treeShaking: true,
-    target: ['es6']
+    target: ['es2015']
   }
   return config
 }
@@ -22,11 +22,12 @@ const getDefaults = () => {
  */
 async function build (rootDir, options) {
   const targetConfig = Object.assign({}, getDefaults(), options)
-  const eps = targetConfig.entryPoints
-  for (let i = 0; i < eps.length; i++) {
-    eps[i] = path.resolve(rootDir, eps[i])
-  }
-  targetConfig.outfile = path.resolve(rootDir, targetConfig.outfile)
+  targetConfig.absWorkingDir = rootDir
+  // const eps = targetConfig.entryPoints
+  // for (let i = 0; i < eps.length; i++) {
+  //   eps[i] = path.resolve(rootDir, eps[i])
+  // }
+  // targetConfig.outfile = path.resolve(rootDir, targetConfig.outfile)
 
   return await esbuild.build(targetConfig)
 }
