@@ -1,6 +1,6 @@
 {
   "name": "@simple-cloudbase/request",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "@simple-cloudbase/request",
   "main": "dist/index.js",
   "types": "types/index.d.ts",
