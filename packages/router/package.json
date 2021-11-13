@@ -24,7 +24,6 @@
   ],
   "author": "ice breaker",
   "devDependencies": {
-    "@cloudbase/database": "^1.4.0",
     "@types/debug": "^4.1.7",
     "@types/koa": "^2.13.4",
     "@types/koa-compose": "^3.2.5",

@@ -1,0 +1,26 @@
+{
+  "name": "@simple-cloudbase/proxy",
+  "version": "0.0.1",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "license": "MIT",
+  "files": [
+    "dist",
+    "types"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "url": "sonofmagic/simple-cloudbase-plugins",
+    "directory": "packages/proxy"
+  },
+  "keywords": [
+    "router",
+    "tcb-router",
+    "小程序",
+    "wechat",
+    "微信云开发"
+  ],
+  "author": "ice breaker"
+}
