@@ -7,4 +7,5 @@ export interface IBaseContext {
 export interface IExtendableContext extends IBaseContext {
   event: ICloudbaseEvent
   context: ICloudbaseContext
+  body?: Record<string, any>
 }

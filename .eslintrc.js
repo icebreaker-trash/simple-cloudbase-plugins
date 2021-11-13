@@ -1,3 +1,21 @@
+function getJestGlobals (flag = true) {
+  return {
+    afterAll: flag,
+    afterEach: flag,
+    beforeAll: flag,
+    beforeEach: flag,
+    describe: flag,
+    expect: flag,
+    fit: flag,
+    it: flag,
+    jest: flag,
+    test: flag,
+    xdescribe: flag,
+    xit: flag,
+    xtest: flag
+  }
+}
+
 module.exports = {
   root: true,
   env: {
@@ -14,13 +32,15 @@ module.exports = {
     sourceType: 'module'
   },
   plugins: [
-    '@typescript-eslint'
+    '@typescript-eslint',
+    'jest'
   ],
   rules: {
   },
   globals: {
     wx: true,
     uni: true,
-    WechatMiniprogram: true
+    WechatMiniprogram: true,
+    ...getJestGlobals()
   }
 }

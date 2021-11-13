@@ -1,7 +1,6 @@
 import Emitter from 'events'
 import compose from 'koa-compose'
 import type { Middleware, ComposedMiddleware } from 'koa-compose'
-import type { BaseContext } from 'koa'
 import context from './context'
 import type {
   IBaseContext,
@@ -9,22 +8,43 @@ import type {
   ICloudbaseEvent,
   ICloudbaseContext
 } from '#types'
+import type { ScfError } from './error'
 
 class Application extends Emitter {
   public context: IBaseContext
-  public middleware: Middleware<IBaseContext>[]
+  public middleware: Middleware<IExtendableContext>[]
   constructor () {
     super()
     this.middleware = []
     this.context = Object.create(context)
   }
 
-  use (fn: Middleware<IBaseContext>) {
-    this.middleware.push(fn)
+  use (fns: Middleware<IExtendableContext>) {
+    this.middleware.push(fns)
     return this
   }
 
-  serve (event: ICloudbaseEvent, context: ICloudbaseContext) {}
+  serve (event: ICloudbaseEvent, context: ICloudbaseContext) {
+    const ctx = this.createContext(event, context)
+    const fn: ComposedMiddleware<IExtendableContext> = compose(this.middleware)
+    return new Promise((resolve) => {
+      fn(ctx)
+        .then(() => {
+          resolve(this.respond(ctx))
+        })
+        .catch((err: ScfError) => {
+          resolve(this.handleError(err))
+        })
+    })
+  }
+
+  respond (ctx: IExtendableContext) {
+    return ctx.body
+  }
+
+  handleError (err: ScfError) {
+    return err.toJSON()
+  }
 
   createContext (
     event: ICloudbaseEvent,
