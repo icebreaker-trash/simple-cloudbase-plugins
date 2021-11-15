@@ -1,4 +1,5 @@
 const esbuild = require('esbuild')
+const { dtsPlugin } = require('esbuild-plugin-d.ts')
 const path = require('path')
 
 const getDefaults = () => {
@@ -12,6 +13,7 @@ const getDefaults = () => {
     sourcemap: true,
     treeShaking: true,
     target: ['es2015']
+
   }
   return config
 }
@@ -23,6 +25,11 @@ const getDefaults = () => {
 async function build (rootDir, options) {
   const targetConfig = Object.assign({}, getDefaults(), options)
   targetConfig.absWorkingDir = rootDir
+  targetConfig.plugins = [dtsPlugin({
+    outDir: path.resolve(rootDir, 'dist'),
+    tsconfig: path.resolve(rootDir, 'tsconfig.json')
+  })]
+
   // const eps = targetConfig.entryPoints
   // for (let i = 0; i < eps.length; i++) {
   //   eps[i] = path.resolve(rootDir, eps[i])

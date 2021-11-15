@@ -22,5 +22,6 @@
     "wechat",
     "微信云开发"
   ],
-  "author": "ice breaker"
+  "author": "ice breaker",
+  "dependencies": {}
 }
